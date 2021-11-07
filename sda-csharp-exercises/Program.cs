@@ -13,15 +13,19 @@ namespace sda_csharp_exercises
                 {
                     if(table[j] > table[j + 1])
                     {
-                        int temp = 0;
-                        temp = table[j];
-                        table[j] = table[j + 1];
-                        table[j + 1] = temp;
+                        Swap(ref table[j], ref table[j+1]);
 
                     }
                 }
             }
             return table;
+        }
+        public static void Swap(ref int x, ref int y)
+        {
+            int temp = 0;
+            temp = x;
+            x = y;
+            y = temp;
         }
         static void Main(string[] args)
         {
