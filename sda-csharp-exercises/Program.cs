@@ -8,12 +8,11 @@ namespace sda_csharp_exercises
         
         public static bool PESELCheker(string PESEL)
         {
-            int[] weightTable = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3 };
+            int[] weightTable = { 1, 3, 7, 9, 1, 3, 7, 9, 1, 3};
             int suma = 0;
             for (int i = 0; i < PESEL.Length-1; i++)
             {
                 suma += (Convert.ToInt32(PESEL[i]) - 48)*weightTable[i];
-
             }
             suma %= 10;
 
@@ -23,6 +22,8 @@ namespace sda_csharp_exercises
         static void Main(string[] args)
         {
             Console.WriteLine(PESELCheker("55030101193"));
+            Console.WriteLine(PESELCheker("55030101230"));
+            Console.WriteLine(PESELCheker("11111111111"));
         }
     }
 }
