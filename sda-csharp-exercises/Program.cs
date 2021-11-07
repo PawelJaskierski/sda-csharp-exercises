@@ -5,22 +5,33 @@ namespace sda_csharp_exercises
 {
     class Program
     {
-        public static void NoDuplicats(int[] arrayToPrint)
+        public static int[] BubbleSort(int[] table)
         {
-            List<int> numbersToPrint = new List<int>();
-            foreach(int number in arrayToPrint)
+            for(int i = 0; i < table.Length-1; i++)
             {
-                if (!numbersToPrint.Contains(number))
+                for(int j = 0; j < table.Length-i-1; j++)
                 {
-                    numbersToPrint.Add(number);
-                    Console.Write(number);
+                    if(table[j] > table[j + 1])
+                    {
+                        int temp = 0;
+                        temp = table[j];
+                        table[j] = table[j + 1];
+                        table[j + 1] = temp;
+
+                    }
                 }
             }
+            return table;
         }
         static void Main(string[] args)
         {
-            int[] testValue = {1,1,2,2,3};
-            NoDuplicats(testValue);
+            int[] answer;
+            answer = BubbleSort(new int[] { 7,1234,1,5,23,532,6 });
+            foreach(int number in answer)
+            {
+                Console.WriteLine(number);
+            }
+
         }
     }
 }
